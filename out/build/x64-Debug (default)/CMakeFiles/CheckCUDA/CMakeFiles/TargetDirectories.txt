@@ -1,0 +1,2 @@
+C:/Users/wetrwer/Desktop/Neural Networks/darknet/out/build/x64-Debug (default)/CMakeFiles/CheckCUDA/CMakeFiles/edit_cache.dir
+C:/Users/wetrwer/Desktop/Neural Networks/darknet/out/build/x64-Debug (default)/CMakeFiles/CheckCUDA/CMakeFiles/rebuild_cache.dir

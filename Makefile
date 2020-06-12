@@ -1,5 +1,11 @@
+<<<<<<< Updated upstream
 GPU=0
 CUDNN=0
+=======
+GPU=1
+CUDNN=1
+CUDNN_HALF=0
+>>>>>>> Stashed changes
 OPENCV=0
 OPENMP=0
 DEBUG=0
