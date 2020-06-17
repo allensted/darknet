@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CheckCUDA")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/wetrwer/Desktop/Neural Networks/darknet/out/build/x64-Debug (默认值)/CMakeFiles/CheckCUDA/out/install/x64-Debug (默认值)")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
