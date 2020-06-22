@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4CF5694F-12A5-4012-8D94-9A0915E9FEB5}</ProjectGuid>
     <RootNamespace>darknet</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -52,7 +52,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.2.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -69,9 +69,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\</OutDir>
+    <IncludePath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\include;$(IncludePath)</IncludePath>
+    <ReferencePath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\x64\vc14\lib;$(ReferencePath)</ReferencePath>
+    <LibraryWPath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\x64\vc14\lib;$(LibraryWPath)</LibraryWPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\</OutDir>
+    <IncludePath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\include;$(IncludePath)</IncludePath>
+    <ReferencePath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\x64\vc14\lib;$(ReferencePath)</ReferencePath>
+    <LibraryWPath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\x64\vc14\lib;$(LibraryWPath)</LibraryWPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\include;$(IncludePath)</IncludePath>
+    <ReferencePath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\x64\vc14\lib;$(ReferencePath)</ReferencePath>
+    <LibraryWPath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\x64\vc14\lib;$(LibraryWPath)</LibraryWPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\include;$(IncludePath)</IncludePath>
+    <ReferencePath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\x64\vc14\lib;$(ReferencePath)</ReferencePath>
+    <LibraryWPath>C:\Users\wetrwer\Downloads\opencv2.4\opencv\build\x64\vc14\lib;$(LibraryWPath)</LibraryWPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -82,6 +98,10 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_30,sm_30;compute_52,sm_52;%(CodeGeneration)</CodeGeneration>
+      <GPUDebugInfo>false</GPUDebugInfo>
+    </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -102,8 +122,9 @@
       <AssemblyDebug>true</AssemblyDebug>
     </Link>
     <CudaCompile>
-      <CodeGeneration>compute_30,sm_30;compute_75,sm_75</CodeGeneration>
+      <CodeGeneration>compute_30,sm_30;compute_52,sm_52;%(CodeGeneration)</CodeGeneration>
       <TargetMachinePlatform>64</TargetMachinePlatform>
+      <GPUDebugInfo>false</GPUDebugInfo>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,6 +145,9 @@
       <AdditionalLibraryDirectories>C:\opencv_2.4.9\opencv\build\x86\vc14\lib;C:\opencv_2.4.9\opencv\build\x86\vc12\lib;$(CUDA_PATH)lib\$(PlatformName);$(cudnn)\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>..\..\3rdparty\lib\x86\pthreadVC2.lib;cudart.lib;cublas.lib;curand.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_30,sm_30;compute_52,sm_52;%(CodeGeneration)</CodeGeneration>
+    </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -153,7 +177,7 @@
     </Link>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
-      <CodeGeneration>compute_30,sm_30;compute_75,sm_75</CodeGeneration>
+      <CodeGeneration>compute_30,sm_30;compute_52,sm_52;%(CodeGeneration)</CodeGeneration>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -302,6 +326,6 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.2.targets" />
   </ImportGroup>
 </Project>
